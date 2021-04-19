@@ -1,36 +1,103 @@
-
-var loadedData = [];
-
-function loadEditItem() {
-    localStorage = window.localStorage;
-    editItem = JSON.parse(localStorage.getItem("editItem"));
-    console.log(editItem);
-    document.getElementById("_id").innerHTML = editItem["_id"];
-    document.getElementById("title").value = editItem["title"];
-    document.getElementById("fullname").value = editItem["fullName"];   
-    document.getElementById("author").value = editItem["author"];   
-    document.getElementById("pages").value = editItem["noOfPgs"];
+var myhobby={
+  "fname":"",
+  "question1":"",
+  "question2":"",
+  "question3":"",
+  "question4":"",
+  "question5":"",
+  "question6":"",
+  "question7":"",
 }
-
-function editData(id) {
-    var tmp = id.split("edit_");
-    var item_id = tmp[1];
-
-    loadedData.forEach(item => {
-        if (item._id == item_id) {
-            console.log(item); 
-            localStorage = window.localStorage;
-            localStorage.setItem('editItem', JSON.stringify(item));
-            document.location  = "form.html"; 
-        }
-    })
+function handlefnameChange(){
+  myhobby.fname=document.getElementById("fname").value;
 }
-
+function handlequestion1Change(){
+  myhobby.question1=document.getElementById("question1").value;
+}
+function handlequestion2Change(){
+  myhobby.question2=document.getElementById("question2").value;
+}
+function handlequestion3Change(e){
+  myhobby.question3=e.target.value;
+  if (myhobby.question3!="other") {
+    myhobby.othervalue="";
+    document.getElementById("othertype").style.display="none";
+  }
+  else{
+    document.getElementById("othertype").style.display="block";
+  }
+}
+function handleQuestion3Change() {
+  if (myhobby.question3 == "other") {
+    myhobby.othervalue = document.getElementById("othertype").value;
+    document.getElementById("othertype").style.display="block";
+  }
+}
+function handlequestion4Change(e){
+  myhobby.question4=e.target.value;
+  if (myhobby.question4!="other") {
+    myhobby.valueother="";
+    document.getElementById("typeother").style.display="none";
+  }
+  else{
+    document.getElementById("typeother").style.display="block";
+  }
+}
+function handleQuestion4Change() {
+  if (myhobby.question4 == "other") {
+    myhobby.valueother = document.getElementById("typeother").value;
+    document.getElementById("typeother").style.display="block";
+  }
+}
+function handlequestion5Change(e){
+  myhobby.question5=e.target.value;
+  if (myhobby.question5!="other") {
+    myhobby.otheransw="";
+    document.getElementById("otheranswer").style.display="none";
+  }
+  else{
+    document.getElementById("otheranswer").style.display="block";
+  }
+}
+function handleQuestion5Change() {
+  if (myhobby.question5 == "other") {
+    myhobby.otheransw = document.getElementById("otheranswer").value;
+    document.getElementById("otheranswer").style.display="block";
+  }
+}
+function handlequestion6Change(){
+  myhobby.question6=document.getElementById("dancer").value;
+}
+function handlequestion7Change(){
+  myhobby.question7=document.getElementById("professionaldancer").value;
+}
+function SaveData(e){
+  console.log(myhobby)
+  e.preventDefault();
+  $.ajax({
+    type: 'POST',
+    url: "https://cse120-2021-api-sirarpi.herokuapp.com/data",
+    data: myhobby,
+    cache: false,
+    dataType : 'json',
+    success: function (data) {
+      console.log("success");
+    },
+    error: function (xhr) {
+      console.error("Error in post", xhr);
+    },
+    complete: function () {
+      console.log("Complete");  
+    }
+  });  
+}
 function deleteData(id) {
 
     var r = confirm("Are you sure you want to delete the item with the following ID? " + id);
-    if (r == false) {
-        return;
+    if (r == true) {
+      
+    } else {
+      return;
     }
 
     var tmp = {
@@ -39,7 +106,7 @@ function deleteData(id) {
 
     $.ajax({
         type: 'POST',
-        url: "https://cse120-2021-api.herokuapp.com/data/delete",
+        url: "https://cse120-2021-api-sirarpi.herokuapp.com/data/delete",
         data: tmp,
         cache: false,
         dataType : 'json',
@@ -57,18 +124,18 @@ function deleteData(id) {
 }
 
 function saveData() {
-	var tmp = {
-		"test": "Data"
-	}
+    var tmp = {
+        "test": "Data"
+    }
 
     $.ajax({
         type: 'POST',
-        url: "https://cse120-2021-api.herokuapp.com/data",
+        url: "https://cse120-2021-api-sirarpi.herokuapp.com/data",
         data: tmp,
         cache: false,
         dataType : 'json',
         success: function (data) {
-        	console.log("success");
+            console.log("success");
         },
         error: function (xhr) {
             console.error("Error in post", xhr);
@@ -78,74 +145,245 @@ function saveData() {
         }
     });
 }
-
 function loadExistingData() {
-    $.ajax({
-        type : "GET",
-        url : "https://cse120-2021-api.herokuapp.com/data",
-        dataType : "json",
-        success : function(data) {
-        	console.log("success", data);
-            displayData(data.data);
-        },
-        error : function(data) {
-            console.log("Error")
+  $.ajax({
+    type : "GET",
+    url : "https://cse120-2021-api-sirarpi.herokuapp.com/data",
+    dataType : "json",
+    success : function(data) {
+      console.log("success", data);
+        displayData(data.data);
+    },
+    error : function(data) {
+        console.log("Error")
+    }
+  });
+}
+function displayData(data) {
+  document.getElementById("dataContainer").innerHTML = "";
+  data.forEach(elem => {
+
+  var item = document.createElement("div");
+      item.id = "div" + elem["_id"];
+      item.className = "item";
+  if (Object.keys(elem).length == 1) {
+  var span = document.createElement("span");
+      span.innerHTML = "<i>Empty Element with autogenerated ID: </i>" + elem["_id"];
+      item.appendChild(span);
+      }
+  Object.keys(elem).forEach(key => {
+    if (key != "_id") {
+  var span = document.createElement("span");
+
+  var b = document.createElement("b");
+      b.innerHTML = key + ": ";
+      span.appendChild(b);
+            
+      span.className = "item";
+  if (elem[key]) {
+      span.innerHTML += elem[key];
+  } else {
+    
+  var span1 = document.createElement("span");
+      span1.className = "undefined";
+      span1.innerHTML = "N/A";
+      span.appendChild(span1)
+            }
+      item.appendChild(span);
+  var br = document.createElement("br");
+      item.appendChild(br);
         }
-    });
+    })
+  var button = document.createElement("button");
+    button.innerHTML = "Delete";
+    button.id = elem["_id"];
+    button.addEventListener("click", function(e){
+      deleteData(e.target.id);
+    }, false);
+    item.appendChild(button);
+    document.getElementById("dataContainer").appendChild(item);
+})
+
+}
+function loadEditItem() {
+  localStorage = window.localStorage;
+  editItem = JSON.parse(localStorage.getItem("editItem"));
+  console.log(editItem);
+  document.getElementById("_id").innerHTML = editItem["_id"];
+  document.getElementById("title").value = editItem["title"];
+  document.getElementById("fullname").value = editItem["fullName"];   
+  document.getElementById("author").value = editItem["author"];   
+  document.getElementById("colour").value = editItem["colour"];
+  document.getElementById("covertype").value = editItem["covertype"];
+  document.getElementById("numberofpages").value = editItem["numberofpages"];
+  document.getElementById("price").value = editItem["price"];
+  document.getElementById("currency").value = editItem["currency"];
+  document.getElementById("language").value = editItem["language"];
+  document.getElementById("originallanguage").value = editItem["originallanguage"];
+  document.getElementById("edition").value = editItem["edition"];
+  document.getElementById("dimensions").value = editItem["dimensions"];
+  document.getElementById("publisher").value = editItem["publisher"];
+  document.getElementById("publishingdate").value = editItem["publishingdate"];
+  document.getElementById("origpdate").value = editItem["origpdate"];
+  document.getElementById("agerestriction").value = editItem["agerestriction"];
+  document.getElementById("genre").value = editItem["genre"];
+}    
+function editData(id) {
+  var tmp = id.split("edit_");
+  var item_id = tmp[1];
+
+  loadedData.forEach(item => {
+    if (item._id == item_id) {
+      console.log(item); 
+      localStorage = window.localStorage;
+      localStorage.setItem('editItem', JSON.stringify(item));
+      document.location  = "form.html"; 
+    }
+  })
+} 
+function deleteData(id) {
+
+  var r = confirm("Are you sure you want to delete the item with the following ID? " + id);
+  if (r == false) {
+    return;
 }
 
-function displayData(data) {
-    loadedData = data;
-    document.getElementById("dataContainer").innerHTML = "";
-    data.forEach(elem => {
-        var item = document.createElement("div");
-        item.id = "div" + elem["_id"];
-        item.className = "item";
-        if (Object.keys(elem).length == 1) {
-            var span = document.createElement("span");
-            span.innerHTML = "<i>Empty Element with autogenerated ID: </i>" + elem["_id"];
-            item.appendChild(span);
-        }
-        Object.keys(elem).forEach(key => {
-            if (key != "_id") {
-                var span = document.createElement("span");
+  var tmp = {
+    "id": id
+  } 
+  $.ajax({
+    type: 'POST',
+    url: "https://cse120-2021-api-sirarpi.herokuapp.com/data/delete",
+    data: tmp,
+    cache: false,
+    dataType : 'json',
+    success: function (data) {
+      console.log("success");
+      document.getElementById("div" + id).style.display = "none";
+    },
+    error: function (xhr) {
+      console.error("Error in post", xhr);
+    },
+    complete: function () {
+      console.log("Complete");  
+    }
+  });
+}    
+function saveData() {
+    var tmp = {
+        "test": "Data"
+    }
 
-                var b = document.createElement("b");
-                b.innerHTML = key + ": ";
-                span.appendChild(b);
-                
-                span.className = "item";
-                if (elem[key]) {
-                    span.innerHTML += elem[key];
-                } else {
-                    var span1 = document.createElement("span");
-                    span1.className = "undefined";
-                    span1.innerHTML = "N/A";
-                    span.appendChild(span1)
-                }
-                item.appendChild(span);
-
-                var br = document.createElement("br");
-                item.appendChild(br);
+    $.ajax({
+      type: 'POST',
+      url: "https://cse120-2021-api-sirarpi.herokuapp.com/data",
+      data: tmp,
+      cache: false,
+      dataType : 'json',
+      success: function (data) {
+        console.log("success");
+      },
+      error: function (xhr) {
+        console.error("Error in post", xhr);
+      },
+      complete: function () {
+        console.log("Complete");  
+      }
+  });
+}
+function loadExistingData() {
+  DancingData = [];
+  BookData = [];
+  otherData = [];
+  $.ajax({
+    type : "GET",
+    url : "https://cse120-2021-api-sirarpi.herokuapp.com/data",
+    dataType : "json",
+    success : function(data) {
+    loadedData = data.data;
+            console.log("success", data);
+            data.data.forEach(elem => {
+          if (elem["owner"] == "Sirarpi Grigoryan") {
+            if (elem["project"] == "Dancing") {
+             DancingData.push(elem);
+            } else {
+              BookData.push(elem);
             }
+          } else {
+            otherData.push(elem);
+          }
         })
-        var edit_button = document.createElement("button");
-        edit_button.innerHTML = "Edit";
-        edit_button.id = "edit_" + elem["_id"];
-        edit_button.className = "edit";
-        edit_button.addEventListener("click", function(e){
-            editData(e.target.id);
-        }, false);
-        item.appendChild(edit_button);
+      displayData(DancingData, "DancingDataContainer");
+      displayData(BookData, "bookDataContainer");
+      displayData(otherData, "otherDataContainer");
+    },
+    error : function(data) {
+      console.log("Error")
+    }
+  });
+}
+function displayData(data, containerDivName) {
+  loadedData = data;
+function displayData(containerDivName) {
+  document.getElementById(dancingDataContainer).innerHTML = "";
+  data.forEach(elem => {
+    var item = document.createElement("div");
+    item.id = "div" + elem["_id"];
+    item.className = "item";
+    if (Object.keys(elem).length == 1) {
+      var span = document.createElement("span");
+      span.innerHTML = "<i>Empty Element with autogenerated ID: </i>" + elem["_id"];
+      item.appendChild(span);
+  }
+    Object.keys(elem).forEach(key => {
+      if (key != "_id") {
+        var span = document.createElement("span");
 
-        var button = document.createElement("button");
-        button.innerHTML = "Delete";
-        button.id = elem["_id"];
-        button.addEventListener("click", function(e){
-            deleteData(e.target.id);
-        }, false);
-        item.appendChild(button);
-        document.getElementById("dataContainer").appendChild(item);
+        var b = document.createElement("b");
+        b.innerHTML = key + ": ";
+        span.appendChild(b);
+        
+        span.className = "item";
+        if (elem[key]) {
+          span.innerHTML += elem[key];
+        } else {
+          var span1 = document.createElement("span");
+          span1.className = "undefined";
+          span1.innerHTML = "---";
+          span.appendChild(span1)
+        }
+        item.appendChild(span);
+
+          var br = document.createElement("br");
+          item.appendChild(br);
+        }
     })
+    var edit_button = document.createElement("button");
+    edit_button.innerHTML = "Edit";
+    edit_button.id = "edit_" + elem["_id"];
+    edit_button.className = "edit";
+    edit_button.addEventListener("click", function(e){
+      editData(e.target.id);
+    }, false);
+    item.appendChild(edit_button);
 
+    var button = document.createElement("button");
+    button.innerHTML = "Delete";
+    button.id = elem["_id"];
+    button.addEventListener("click", function(e){
+      deleteData(e.target.id);
+    }, false);
+    item.appendChild(button);
+    document.getElementById(containerDivName).appendChild(item);
+  })
+}
+
+function toggleOtherData() {
+  var otherData = document.getElementById("otherDataContainer");
+  if (otherData.style.display == "block") {
+    otherData.style.display = "none";
+  } else {
+    otherData.style.display = "block";
+  }
+}
 }
