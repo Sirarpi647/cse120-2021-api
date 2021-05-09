@@ -590,10 +590,4 @@ function updateBook(){
    "genre": document.getElementById("genre").value,
    "agerestriction": document.getElementById("agerestriction").value,
    }
-
-
-
-
-
-
-
+}
