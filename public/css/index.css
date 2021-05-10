@@ -37,10 +37,10 @@ img{
   display: none;
 }
 #singingDataContainer div.item {
-  background-color: rgb(251, 231, 255);
+  background-color: #0086b3;
 }
 #bookDataContainer div.item {
-  background-color: rgb(251, 231, 255);
+  background-color: #0086b3);
 }
 div.item {
   min-width: 200px;
