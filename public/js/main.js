@@ -220,7 +220,7 @@ function loadEditItem() {
   console.log(editItem);
   document.getElementById("_id").innerHTML = editItem["_id"];
   document.getElementById("title").value = editItem["title"];
-  document.getElementById("fullname").value = editItem["fullName"];   
+  document.getElementById("fullname").value = editItem["fullname"];   
   document.getElementById("author").value = editItem["author"];   
   document.getElementById("colour").value = editItem["colour"];
   document.getElementById("covertype").value = editItem["covertype"];
@@ -228,12 +228,12 @@ function loadEditItem() {
   document.getElementById("price").value = editItem["price"];
   document.getElementById("currency").value = editItem["currency"];
   document.getElementById("language").value = editItem["language"];
-  document.getElementById("originallanguage").value = editItem["originallanguage"];
+  document.getElementById("originallanguage").value = editItem["original language"];
   document.getElementById("edition").value = editItem["edition"];
   document.getElementById("dimensions").value = editItem["dimensions"];
   document.getElementById("publisher").value = editItem["publisher"];
-  document.getElementById("publishingdate").value = editItem["publishingdate"];
-  document.getElementById("origpdate").value = editItem["origpdate"];
+  document.getElementById("publishingdate").value = editItem["publishing date"];
+  document.getElementById("origpdate").value = editItem["original publishing date"];
   document.getElementById("agerestriction").value = editItem["agerestriction"];
   document.getElementById("genre").value = editItem["genre"];
 }    
