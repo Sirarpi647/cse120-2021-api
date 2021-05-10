@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>AUA CSE120 - 2021</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<script type="text/javascript" src="js/main.js"></script>
+		<script
+			src="https://code.jquery.com/jquery-3.5.1.min.js"
+			integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+			crossorigin="anonymous"></script>
+	</head>
+	<body onload="loadEditItem()">
+		<label>ID</label>
+		<span id="_id"></span><br>
+		<label> Your name</label>
+		<input type="text" id="fname"><br>
+		<label>Why did you choose dance as a hobby?</label>
+		<input type="text" id="question1"><br>
+    <label>When did you start dancing as a hobby?</label>
+		<input type="text" id="question2"><br>
+    <label>How did you learn dancing?</label>
+		<input type="text" id="question3"><br>
+    <label>Which genre do you dance?</label>
+		<input type="text" id="genre"><br>
+    <label>What type do you prefer?</label>
+		<input type="text" id="type"><br>
+    <label>Are there any dancers who influence you? (If yes, write the name)</label>
+		<input type="text" id="dancer"><br>
+    <label>Would you like to become a professional dancer?</label>
+		<input type="text" id="professionaldancer"><br>
+    <button onclick="updateBook()">Update</button>
+	</body>
+</html>
