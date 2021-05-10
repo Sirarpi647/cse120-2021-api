@@ -341,7 +341,7 @@ function loadExistingData() {
             otherData.push(elem);
           }
         })
-      displayData(DancingData, "DancingDataContainer");
+      displayData(dancingData, "dancingDataContainer");
       displayData(BookData, "bookDataContainer");
       displayData(otherData, "otherDataContainer");
     },
