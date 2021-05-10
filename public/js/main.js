@@ -158,22 +158,7 @@ function updateHobby(){
 
 
   
-function loadExistingData() {
-  var existingData = [];
-  $.ajax({
-    type : "GET",
-    url : "https://cse120-2021-api-sirarpi.herokuapp.com/data",
-    dataType : "json",
-    success : function(data) {
-      console.log("success", data);
-      existingData = data;
-        displayData(data.data);
-    },
-    error : function(data) {
-        console.log("Error")
-    }
-  });
-}
+
 function displayData(existingData) {
   document.getElementById("existingData").innerHTML = "<ul>";
   for (var i = 0; i < existingData.length; i++) {
@@ -590,5 +575,4 @@ function updateBook(){
    "genre": document.getElementById("genre").value,
    "agerestriction": document.getElementById("agerestriction").value,
    }
-}
 }
