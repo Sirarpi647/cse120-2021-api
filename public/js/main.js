@@ -203,30 +203,30 @@ function loadEditItem() {
   localStorage = window.localStorage;
   editItem = JSON.parse(localStorage.getItem("editItem"));
   console.log(editItem);
-  document.getElementById("_id").innerHTML = editItem["_id"];
+  document.getElementById("id").innerHTML = editItem["_id"];
   document.getElementById("title").value = editItem["title"];
   document.getElementById("fullname").value = editItem["fullname"];   
   document.getElementById("author").value = editItem["author"];   
   document.getElementById("colour").value = editItem["colour"];
   document.getElementById("covertype").value = editItem["covertype"];
-  document.getElementById("numberofpages").value = editItem["numberofpages"];
+  document.getElementById("numberofpages").value = editItem["number of pages"];
   document.getElementById("price").value = editItem["price"];
   document.getElementById("currency").value = editItem["currency"];
   document.getElementById("language").value = editItem["language"];
-  document.getElementById("originallanguage").value = editItem["original language"];
+  document.getElementById("originallanguage").value = editItem["originallanguage"];
   document.getElementById("edition").value = editItem["edition"];
   document.getElementById("dimensions").value = editItem["dimensions"];
   document.getElementById("publisher").value = editItem["publisher"];
-  document.getElementById("publishingdate").value = editItem["publishing date"];
-  document.getElementById("origpdate").value = editItem["original publishing date"];
-  document.getElementById("agerestriction").value = editItem["agerestriction"];
+  document.getElementById("publishingdate").value = editItem["publishingdate"];
+  document.getElementById("orgpublishingdate").value = editItem["orgpublishdate"];
+  document.getElementById("agerestriction").value = editItem["agerest"];
   document.getElementById("genre").value = editItem["genre"];
 }    
 function loadHobbyEditItem() {
     localStorage = window.localStorage;
     editItem = JSON.parse(localStorage.getItem("editItem"));
     console.log(editItem);
-    document.getElementById("_id").innerHTML = editItem["_id"];
+    document.getElementById("id").innerHTML = editItem["_id"];
     document.getElementById("fname").value = editItem["fname"];
     document.getElementById("question1").value = editItem["question1"];   
     document.getElementById("question2").value = editItem["question2"];   
@@ -235,7 +235,6 @@ function loadHobbyEditItem() {
     document.getElementById("type").value = editItem["question5"];
     document.getElementById("dancer").value = editItem["question6"];
     document.getElementById("professionaldancer").value = editItem["question7"];
-    
 }
 function editData(id) {
   var tmp = id.split("edit_");
@@ -546,12 +545,12 @@ function updateBook(){
    "price": document.getElementById("price").value,
    "currency": document.getElementById("currency").value,
    "language": document.getElementById("language").value,
-   "originallanguage": document.getElementById("original language").value,
+   "originallanguage": document.getElementById("originallanguage").value,
    "edition": document.getElementById("edition").value,
    "dimensions": document.getElementById("dimensions").value,
    "publisher": document.getElementById("publisher").value,
-   "publishingdate": document.getElementById("publishing date").value,
-   "orpublishingdate": document.getElementById("original publishing date").value,
+   "publishingdate": document.getElementById("publishingdate").value,
+   "orpublishingdate": document.getElementById("orgpublishingdate").value,
    "genre": document.getElementById("genre").value,
    "agerest": document.getElementById("agerestriction").value,
    }
