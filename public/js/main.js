@@ -426,7 +426,7 @@ function toggleOtherData() {
   } else {
     otherData.style.display = "block";
   }
-
+}
 
 
 
