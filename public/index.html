@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+  <head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Sirarpi's code.....</title>
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <script	src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="			crossorigin="anonymous"></script>
+  </head>   
+  <body>
+    <h1>Dancing as a hobby </h1>
+    <form>
+    <img src="https://i.pinimg.com/originals/c9/57/12/c957121e106086e6757d59b41ab97552.jpg" alt="dancing girl"> <br> 
+    <span> * Required</span>
+      <div>
+        <div id="mydiv">
+          <strong>
+        <label for="fname">Your name<span>*</span> </label><strong><br>
+        <input type="text" id="fname" name="fname" onblur="handlefnameChange()" required>
+      </div><br>
+      <div>
+        <div id="mydiv">     
+      <strong>
+        <label for="question1">Why did you choose dance as a hobby?<span>*</span> </label><strong><br>
+        <input type="text" id="question1" name="question1" onblur="handlequestion1Change()" required>
+      </div><br>
+      <div>
+        <div id="mydiv"> 
+      <strong>
+        <label for="question2">When did you start dancing as a hobby?<span>*</span> </label><strong><br> 
+        <input type="text" id="question2" name="question2" onblur="handlequestion2Change()"required>
+      </div><br>
+      <div>
+        <div id="mydiv">
+      <strong>
+        <label for="question3">How did you learn dancing?<span>*</span> </label><strong><br> 
+        <input type="radio" id="byteacher" name="question3" value="byteacher" onchange="handlequestion3Change(event)"required>
+        <label for="byteacher"> By teacher</label><br>
+        <input type="radio" id="bymyself" name="question3" value="bymyself" onchange="handlequestion3Change(event)"required>
+        <label for="bymyself"> By myself</label><br>
+        <input type="radio" id="byinternet" name="question3" value="byinternet" onchange="handlequestion3Change(event)"required>
+        <label for="byinternet"> By internet videos</label><br>
+        <input type="radio" id="other" name="question3" value="other" onchange="handlequestion3Change(event)"required>
+        <label for="other"> Other</label><br>
+        <textarea id="othertype" onblur="handleQuestion3Change()"></textarea>
+      </div><br>
+      <div>
+        <div id="mydiv"> 
+      <strong>
+        <label for="genre">Which genre do you dance? </label><strong><br>  
+        <input type="checkbox" id="ballet" name="genre" value="ballet" onchange="handlequestion4Change(event)">
+        <label for="ballet"> Ballet</label><br>
+        <input type="checkbox" id="hiphop" name="genre" value="hiphop" onchange="handlequestion4Change(event)">
+        <label for="hiphop"> Hip-Hop</label><br>
+        <input type="checkbox" id="modern" name="genre" value="modern" onchange="handlequestion4Change(event)">
+        <label for="modern"> Modern</label><br>
+        <input type="checkbox" id="ballroom" name="genre" value="ballroom" onchange="handleQuestion4Change(event)">
+        <label for="ballroom"> Ballroom</label><br>
+        <input type="checkbox" id="folkdance" name="genre" value="folkdance" onchange="handlequestion4Change(event)">
+        <label for="folkdance"> Folk Dance</label><br>
+        <input type="checkbox" id="other" name="genre" value="other" onchange="handlequestion4Change(event)">
+        <label for="other"> Other</label><br>
+        <textarea id="typeother" onblur="handleQuestion4Change()"></textarea>
+      </div><br>
+      <div>
+        <div id="mydiv"> 
+      <strong>
+        <label for="type">What type do you prefer?<span>*</span> </label><strong><br>
+        <input type="radio" id="solo" name="type" value="solo" onchange="handlequestion5Change(event)"required>
+        <label for="solo"> Solo dances</label><br> 
+        <input type="radio" id="group" name="type" value="group" onchange="handlequestion5Change(event)"required>
+        <label for="group"> Group dances</label><br>  
+        <input type="radio" id="partner" name="type" value="partner" onchange="handlequestion5Change(event)"required>
+        <label for="partner"> Partner dances</label><br> 
+        <input type="radio" id="other" name="type" value="other" onchange="handlequestion5Change(event)"required>
+        <label for="other"> Other</label><br> 
+        <textarea id="otheranswer" onblur="handleQuestion5Change()"></textarea>
+      </div><br>
+      <div>
+        <div id="mydiv"> 
+      <strong>
+        <label for="dancer">Are there any dancers who influence you? (If yes, write the name) </label><strong><br>
+        <input type="text" id="dancer" name="dancer"onblur="handlequestion6Change()">
+      </div><br>   
+      <div>
+        <div id="mydiv">
+      <strong>
+        <label for="professionaldancer">Would you like to become a professional dancer? </label><strong><br>
+        <select name="professionaldancer" id="professionaldancer"  onchange="handlequestion7Change()">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>  
+      </div><br>  
+      <input type="submit" value="Click Here!" onclick="showTheHobbyData(event)">
+    </form>
+    <script src="js/main.js"></script>
+    </body>
+</html>
