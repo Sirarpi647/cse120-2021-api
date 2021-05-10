@@ -37,4 +37,54 @@ img{
   display: none;
 }
   
+body {
+ 
+ background-color:rgba(210,129,224,0.58)
 
+}
+a {
+  color: rgb(99, 10, 110);
+  font-size: 30px;
+
+}
+h1 {
+  color: #8d528d;
+  font-size: 50px
+}
+img {
+  position:absolute;
+  top: 110px;
+  left: 630px;
+  width:auto;
+  height:100px;
+}
+
+#divdiv{
+  border:3px solid black;
+  background-color:#D3D3D3;
+  border-radius:20px;
+  padding:10px;
+}
+img{
+  width:150px; 
+  height:100px;
+}
+span{
+  color:#8B0000;
+  font-weight: bold;
+}
+body{
+  background-color:#F08080;
+  margin-left:auto;
+  margin-right:auto;
+  width:500px;
+}
+#othercovertype{
+  display: none;
+}
+#otherlanguage{
+  display: none;
+}
+#originalother{
+  display: none;
+}
