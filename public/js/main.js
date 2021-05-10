@@ -110,22 +110,7 @@ function showTheHobbyData(e){
     });
   }
 }
-$.ajax({
-      type: 'POST',
-      url: "https://cse120-2021-api-sirarpi.herokuapp.com/data/update",
-      data: myhobby,
-      cache: false,
-      dataType : 'json',
-      success: function (data) {
-        console.log("success");
-      },
-      error: function (xhr) {
-        console.error("Error in post", xhr);
-      },
-      complete: function () {
-        console.log("Complete");  
-      }
-    });
+
 function updateHobby(){
   var tmp = {
    "id" : document.getElementById("_id").innerHTML,
@@ -210,7 +195,7 @@ function displayData(data) {
     }, false);
     item.appendChild(button);
     document.getElementById("dataContainer").appendChild(item);
-})
+ })
 
 }
 var loadedData = [];
@@ -274,7 +259,7 @@ function deleteData(id) {
   var r = confirm("Are you sure you want to delete the item with the following ID? " + id);
   if (r == false) {
     return;
-}
+ }
 
   var tmp = {
     "id": id
@@ -317,7 +302,7 @@ function saveData() {
       complete: function () {
         console.log("Complete");  
       }
-  });
+   });
 }
 function loadExistingData() {
   DancingData = [];
