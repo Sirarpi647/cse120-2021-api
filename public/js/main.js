@@ -322,7 +322,6 @@ function saveData() {
 function loadExistingData() {
   DancingData = [];
   BookData = [];
-  otherData = [];
   $.ajax({
     type : "GET",
     url : "https://cse120-2021-api-sirarpi.herokuapp.com/data",
@@ -331,19 +330,14 @@ function loadExistingData() {
     console.log("success", data);
     loadedData = data.data;
     data.data.forEach(elem => {
-          if (elem["owner"] == "Sirarpi Grigoryan") {
-            if (elem["project"] == "Dancing") {
-             DancingData.push(elem);
-            } else {
-              BookData.push(elem);
-            }
-          } else {
-            otherData.push(elem);
+          if (elem["project"] == "My Book") {
+            BookData.push(elem);
+          }else {
+            DancingData.push(elem); 
           }
         })
       displayData(DancingData, "dancingDataContainer");
       displayData(BookData, "bookDataContainer");
-      displayData(otherData, "otherDataContainer");
     },
     error : function(data) {
       console.log("Error")
