@@ -1,0 +1,21 @@
+body {
+ 
+ background-color:rgba(210,129,224,0.58)
+
+}
+a {
+  color: rgb(99, 10, 110);
+  font-size: 30px;
+
+}
+h1 {
+  color: #8d528d;
+  font-size: 50px
+}
+img{
+  position:absolute;
+  top: 110px;
+  left: 630px;
+  width:auto;
+  height:100px;
+}
