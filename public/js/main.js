@@ -94,7 +94,7 @@ function showTheHobbyData(e){
     console.log(myhobby);
     $.ajax({
       type: 'POST',
-      url: "https://cse120-2021-api-sirarpi.herokuapp.com/index.html/data",
+      url: "https://cse120-2021-api-sirarpi.herokuapp.com/data",
       data: myhobby,
       cache: false,
       dataType : 'json',
@@ -125,7 +125,7 @@ function updateHobby(){
    }
  $.ajax({
         type: 'POST',
-        url: "https://cse120-2021-api-sirarpi.herokuapp.com/index.html/data/update",
+        url: "https://cse120-2021-api-sirarpi.herokuapp.com/update",
         data: tmp,
         cache: false,
         dataType : 'json',
@@ -264,7 +264,7 @@ function deleteData(id) {
   } 
   $.ajax({
     type: 'POST',
-    url: "https://cse120-2021-api-sirarpi.herokuapp.com/index.html/data/delete",
+    url: "https://cse120-2021-api-sirarpi.herokuapp.com/delete",
     data: tmp,
     cache: false,
     dataType : 'json',
@@ -286,7 +286,7 @@ function saveData() {
     }
     $.ajax({
       type: 'POST',
-      url: "https://cse120-2021-api-sirarpi.herokuapp.com/index.html/data",
+      url: "https://cse120-2021-api-sirarpi.herokuapp.com/data",
       data: tmp,
       cache: false,
       dataType : 'json',
@@ -306,7 +306,7 @@ function loadExistingData() {
   BookData = [];
   $.ajax({
     type : "GET",
-    url : "https://cse120-2021-api-sirarpi.herokuapp.com/index.html/data",
+    url : "https://cse120-2021-api-sirarpi.herokuapp.com/data",
     dataType : "json",
     success : function(data) {
     console.log("success", data);
@@ -498,12 +498,12 @@ function handlegenrechange(){
 function handleagerestrictionchange(){
   mybook.agerest=document.getElementById("agerestriction").value;
 }
-function showTheBookData(e){
+function showTheBokData(e){
   e.preventDefault();
   console.log(mybook);
   $.ajax({
     type: 'POST',
-    url: "https://cse120-2021-api-sirarpi.herokuapp.com/book.html/data",
+    url: "https://cse120-2021-api-sirarpi.herokuapp.com/data",
     data: myfavebook,
     cache: false,
     dataType : 'json',
