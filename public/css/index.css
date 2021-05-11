@@ -26,5 +26,12 @@ img{
   position: relative;
   left: 140px;
 }
-
-  
+#othertype{
+  display: none;
+}
+#typeother{
+  display: none;
+}
+#otheranswer{
+  display: none;
+}

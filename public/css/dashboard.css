@@ -1,15 +1,17 @@
 body {
- 
+
+ background-color:rgba(210,129,224,0.58)
  background-color:#ffb3b3
 
 }
 a {
-  color: #ff4d4d);
+  color: rgb(99, 10, 110);
+  font-size: 30px;
   font-size: 50px;
 
 }
 h1 {
-  color: #ff4d4d;
+  color: #8d528d;
   font-size: 50px
 }
 img {
