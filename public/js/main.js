@@ -86,6 +86,30 @@ function validateFormData() {
   })
   return isFormValid;
 }
+function showTheHobbyData(e){
+  e.preventDefault();
+  if(validateFormData() == false) {
+    return;
+  } else {
+    console.log(myhobby);
+    $.ajax({
+      type: 'POST',
+      url: "https://cse120-2021-api-sirarpi.herokuapp.com/index.html/data",
+      data: myhobby,
+      cache: false,
+      dataType : 'json',
+      success: function (data) {
+        console.log("success");
+      },
+      error: function (xhr) {
+        console.error("Error in post", xhr);
+      },
+      complete: function () {
+        console.log("Complete");  
+      }
+    });
+  }
+}
 
 function updateHobby(){
   var tmp = {
@@ -101,7 +125,7 @@ function updateHobby(){
    }
  $.ajax({
         type: 'POST',
-        url: "https://cse120-2021-api-sirarpi.herokuapp.com/data/update",
+        url: "https://cse120-2021-api-sirarpi.herokuapp.com/index.html/data/update",
         data: tmp,
         cache: false,
         dataType : 'json',
@@ -240,7 +264,7 @@ function deleteData(id) {
   } 
   $.ajax({
     type: 'POST',
-    url: "https://cse120-2021-api-sirarpi.herokuapp.com/data/delete",
+    url: "https://cse120-2021-api-sirarpi.herokuapp.com/index.html/data/delete",
     data: tmp,
     cache: false,
     dataType : 'json',
@@ -257,14 +281,13 @@ function deleteData(id) {
   });
 }    
 function saveData() {
-    console.log(myhobby)
     var tmp = {
         "test": "Data"
     }
     $.ajax({
       type: 'POST',
-      url: "https://cse120-2021-api-sirarpi.herokuapp.com/data",
-      data: myhobby,
+      url: "https://cse120-2021-api-sirarpi.herokuapp.com/index.html/data",
+      data: tmp,
       cache: false,
       dataType : 'json',
       success: function (data) {
@@ -283,7 +306,7 @@ function loadExistingData() {
   BookData = [];
   $.ajax({
     type : "GET",
-    url : "https://cse120-2021-api-sirarpi.herokuapp.com/data",
+    url : "https://cse120-2021-api-sirarpi.herokuapp.com/index.html/data",
     dataType : "json",
     success : function(data) {
     console.log("success", data);
@@ -475,7 +498,26 @@ function handlegenrechange(){
 function handleagerestrictionchange(){
   mybook.agerest=document.getElementById("agerestriction").value;
 }
-
+function showTheBookData(e){
+  e.preventDefault();
+  console.log(mybook);
+  $.ajax({
+    type: 'POST',
+    url: "https://cse120-2021-api-sirarpi.herokuapp.com/book.html/data",
+    data: myfavebook,
+    cache: false,
+    dataType : 'json',
+    success: function (data) {
+      console.log("success");
+    },
+    error: function (xhr) {
+      console.error("Error in post", xhr);
+    },
+    complete: function () {
+      console.log("Complete");  
+    }
+  });
+}
 function updateBook(){
   var tmp = {
    "id" : document.getElementById("_id").innerHTML,
