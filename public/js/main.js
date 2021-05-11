@@ -257,13 +257,14 @@ function deleteData(id) {
   });
 }    
 function saveData() {
+    console.log(myhobby)
     var tmp = {
         "test": "Data"
     }
     $.ajax({
       type: 'POST',
       url: "https://cse120-2021-api-sirarpi.herokuapp.com/data",
-      data: tmp,
+      data: myhobby,
       cache: false,
       dataType : 'json',
       success: function (data) {
