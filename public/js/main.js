@@ -198,8 +198,8 @@ function loadEditItem() {
   editItem = JSON.parse(localStorage.getItem("editItem"));
   console.log(editItem);
   document.getElementById("_id").innerHTML = editItem["_id"];
-  document.getElementById("title").value = editItem["title"];
   document.getElementById("fullname").value = editItem["fullname"];   
+  document.getElementById("title").value = editItem["title"];
   document.getElementById("author").value = editItem["author"];   
   document.getElementById("colour").value = editItem["colour"];
   document.getElementById("covertype").value = editItem["covertype"];
@@ -213,8 +213,8 @@ function loadEditItem() {
   document.getElementById("publisher").value = editItem["publisher"];
   document.getElementById("pdate").value = editItem["pdate"];
   document.getElementById("origpdate").value = editItem["origpdate"];
-  document.getElementById("agerestriction").value = editItem["agerestriction"];
   document.getElementById("genre").value = editItem["genre"];
+  document.getElementById("agerestriction").value = editItem["agerestriction"];
 }    
 function loadHobbyEditItem() {
     localStorage = window.localStorage;
