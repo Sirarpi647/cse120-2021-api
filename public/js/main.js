@@ -259,7 +259,7 @@ function deleteData(id) {
   } 
   $.ajax({
     type: 'POST',
-    url: "https://cse120-2021-api-sirarpi.herokuapp.com/delete",
+    url: "https://cse120-2021-api-sirarpi.herokuapp.com/data/delete",
     data: tmp,
     cache: false,
     dataType : 'json',
