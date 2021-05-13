@@ -198,7 +198,6 @@ function loadEditItem() {
   editItem = JSON.parse(localStorage.getItem("editItem"));
   console.log(editItem);
   document.getElementById("_id").innerHTML = editItem["_id"];
-  document.getElementById("id").innerHTML = editItem["_id"];
   document.getElementById("title").value = editItem["title"];
   document.getElementById("fullname").value = editItem["fullname"];   
   document.getElementById("author").value = editItem["author"];   
