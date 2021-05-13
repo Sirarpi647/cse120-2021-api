@@ -208,7 +208,7 @@ function loadEditItem() {
   document.getElementById("price").value = editItem["price"];
   document.getElementById("currency").value = editItem["currency"];
   document.getElementById("language").value = editItem["language"];
-  document.getElementById("originallanguage").value = editItem["original language"];
+  document.getElementById("olanguage").value = editItem["original language"];
   document.getElementById("originallanguage").value = editItem["originallanguage"];
   document.getElementById("edition").value = editItem["edition"];
   document.getElementById("dimensions").value = editItem["dimensions"];
