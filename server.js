@@ -40,7 +40,7 @@ app.post('/', function (req, res) {
 app.get('/data', function (req, res) {
   client.connect()
   .then(client => {
-    client.db('cse120-2021-db').collection('mybook').find().toArray()
+    client.db('cse120-2021-db').collection('books').find().toArray()
       .then(results => {
         console.log(results)
         res.send({"data":results});
@@ -53,7 +53,7 @@ app.get('/data', function (req, res) {
 app.post('/data', function (req, res) {
   client.connect()
   .then(client => {
-    client.db('cse120-2021-db').collection('mybook').insertOne(req.body)
+    client.db('cse120-2021-db').collection('books').insertOne(req.body)
       .then(result => {
         console.log(result)
         res.send({"message":"Added"});
@@ -68,7 +68,7 @@ app.post('/data/delete', function (req, res) {
   .then(client => {
     let id = req.body.id;
     const query = { "_id": ObjectId(id)};
-    client.db('cse120-2021-db').collection('mybook').deleteOne(query)
+    client.db('cse120-2021-db').collection('books').deleteOne(query)
       .then(result => {
         console.log(result.deletedCount)
         res.send({"deleted":result.deletedCount});
@@ -83,7 +83,7 @@ app.post('/data/update', function (req, res) {
   .then(client => {
     let id = req.body.id;
     const query = { "_id": ObjectId(id)};
-    client.db('cse120-2021-db').collection('mybook').updateOne(query, {$set: req.body})
+    client.db('cse120-2021-db').collection('books').updateOne(query, {$set: req.body})
       .then(result => {
         res.send({"status":"Updated"});
       })
