@@ -233,21 +233,28 @@ function loadHobbyEditItem() {
     document.getElementById("professionaldancer").value = editItem["professionaldancer"];
 
 }
-function editData(id) {
-  var tmp = id.split("edit_");
-  var item_id = tmp[1];
-  loadedData.forEach(item => {
-    if (item._id == item_id) {
-      console.log(item); 
-      localStorage = window.localStorage;
-      localStorage.setItem('editItem', JSON.stringify(item));
-      if (item.project == "Dancing") {
-      document.location  = "dancing.html"; 
-    } else {
-              document.location  = "form.html";
-  }
-        }
-    })
+function loadHobbyEdit(id) {
+
+  
+        fullData.forEach(elem => {
+        if (elem._id == id) {
+            storage = window.localStorage;
+            storage.setItem('editItem', JSON.stringify(elem))
+            document.location  = "dancing.html"}
+        }   
+    )
+}
+
+function loadEdit(id) {
+
+  
+        fullData.forEach(elem => {
+        if (elem._id == id) {
+            storage = window.localStorage;
+            storage.setItem('editItem', JSON.stringify(elem))
+            document.location  = "form.html"}
+        }   
+    )
 }
 function deleteData(id) {
   var r = confirm("Are you sure you want to delete the item with the following ID? " + id);
