@@ -241,7 +241,7 @@ function editData(id) {
       console.log(item); 
       localStorage = window.localStorage;
       localStorage.setItem('editItem', JSON.stringify(item));
-      if (item.project == "Dancing") {
+      if (item.project == "My Hobby") {
       document.location  = "dancing.html"; 
     } else {
               document.location  = "form.html";
