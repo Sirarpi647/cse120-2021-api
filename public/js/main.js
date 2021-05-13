@@ -127,7 +127,7 @@ function updateHobby(){
    }
  $.ajax({
         type: 'POST',
-        url: "https://cse120-2021-api-sirarpi.herokuapp.com/update",
+        url: "https://cse120-2021-api-sirarpi.herokuapp.com/data/update",
         data: tmp,
         cache: false,
         dataType : 'json',
