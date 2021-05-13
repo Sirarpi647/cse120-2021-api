@@ -209,16 +209,12 @@ function loadEditItem() {
   document.getElementById("currency").value = editItem["currency"];
   document.getElementById("language").value = editItem["language"];
   document.getElementById("olanguage").value = editItem["original language"];
-  document.getElementById("originallanguage").value = editItem["originallanguage"];
   document.getElementById("edition").value = editItem["edition"];
   document.getElementById("dimensions").value = editItem["dimensions"];
   document.getElementById("publisher").value = editItem["publisher"];
-  document.getElementById("publishingdate").value = editItem["publishing date"];
+  document.getElementById("pdate").value = editItem["publishing date"];
   document.getElementById("origpdate").value = editItem["original publishing date"];
   document.getElementById("agerestriction").value = editItem["agerestriction"];
-  document.getElementById("publishingdate").value = editItem["publishingdate"];
-  document.getElementById("orgpublishingdate").value = editItem["orgpublishdate"];
-  document.getElementById("agerestriction").value = editItem["agerest"];
   document.getElementById("genre").value = editItem["genre"];
 }    
 function loadHobbyEditItem() {
