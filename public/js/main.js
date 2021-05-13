@@ -365,7 +365,7 @@ function displayData(data, containerDivName) {
     edit_button.id = "edit_" + elem["_id"];
     edit_button.className = "edit";
     edit_button.addEventListener("click", function(e){
-      editData(e.target.id);
+      loadEdit(e.target.id);
     }, false);
     item.appendChild(edit_button);
     var button = document.createElement("button");
