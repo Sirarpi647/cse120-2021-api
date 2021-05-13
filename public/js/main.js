@@ -194,30 +194,7 @@ function displayData(data) {
     document.getElementById("dataContainer").appendChild(item);
  })
 }
-var loadedData = [];
-function loadEditItem() {
-  localStorage = window.localStorage;
-  editItem = JSON.parse(localStorage.getItem("editItem"));
-  console.log(editItem);
-  document.getElementById("_id").innerHTML = editItem["_id"];
-  document.getElementById("fullname").value = editItem["fullname"];   
-  document.getElementById("title").value = editItem["title"];
-  document.getElementById("author").value = editItem["author"];   
-  document.getElementById("colour").value = editItem["colour"];
-  document.getElementById("covertype").value = editItem["covertype"];
-  document.getElementById("numberofpages").value = editItem["numberofpages"];
-  document.getElementById("price").value = editItem["price"];
-  document.getElementById("currency").value = editItem["currency"];
-  document.getElementById("language").value = editItem["language"];
-  document.getElementById("olanguage").value = editItem["olanguage"];
-  document.getElementById("edition").value = editItem["edition"];
-  document.getElementById("dimensions").value = editItem["dimensions"];
-  document.getElementById("publisher").value = editItem["publisher"];
-  document.getElementById("pdate").value = editItem["pdate"];
-  document.getElementById("origpdate").value = editItem["origpdate"];
-  document.getElementById("genre").value = editItem["genre"];
-  document.getElementById("agerestriction").value = editItem["agerestriction"];
-}    
+
 function loadHobbyEditItem() {
     localStorage = window.localStorage;
     editItem = JSON.parse(localStorage.getItem("editItem"));
