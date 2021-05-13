@@ -204,7 +204,6 @@ function loadEditItem() {
   document.getElementById("colour").value = editItem["colour"];
   document.getElementById("covertype").value = editItem["covertype"];
   document.getElementById("numberofpages").value = editItem["numberofpages"];
-  document.getElementById("numberofpages").value = editItem["number of pages"];
   document.getElementById("price").value = editItem["price"];
   document.getElementById("currency").value = editItem["currency"];
   document.getElementById("language").value = editItem["language"];
