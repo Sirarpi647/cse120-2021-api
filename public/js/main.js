@@ -504,7 +504,7 @@ function showTheBookData(e){
   $.ajax({
     type: 'POST',
     url: "https://cse120-2021-api-sirarpi.herokuapp.com/data",
-    data: myfavebook,
+    data: mybook,
     cache: false,
     dataType : 'json',
     success: function (data) {
