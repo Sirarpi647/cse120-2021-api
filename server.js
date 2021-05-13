@@ -77,6 +77,7 @@ app.post('/data/delete', function (req, res) {
   })
   .catch(console.error)
 })
+
 app.post('/data/update', function (req, res) {
   client.connect()
   .then(client => {
