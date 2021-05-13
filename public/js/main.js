@@ -1,3 +1,5 @@
+var requiredFields=["fname", "question1", "question2", "question3", "question5"
+]
 var myhobby={
   "owner": "Sirarpi Grigoryan",
   "project": "My Hobby",
