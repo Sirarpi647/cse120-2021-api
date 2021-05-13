@@ -113,15 +113,15 @@ function showTheHobbyData(e){
 
 function updateHobby(){
   var tmp = {
-   "id" : document.getElementById("_id").innerHTML,
+   "_id" : document.getElementById("_id").innerHTML,
    "fname" : document.getElementById("fname").value,
    "question1" : document.getElementById("question1").value,
    "question2" : document.getElementById("question2").value,
    "question3" : document.getElementById("question3").value,
-   "question4" : document.getElementById("genre").value,
-   "question5" : document.getElementById("type").value,
-   "question6" : document.getElementById("dancer").value,
-   "question7" : document.getElementById("professionaldancer").value, 
+   "genre" : document.getElementById("genre").value,
+   "type" : document.getElementById("type").value,
+   "dancer" : document.getElementById("dancer").value,
+   "professionaldancer" : document.getElementById("professionaldancer").value, 
    }
  $.ajax({
         type: 'POST',
@@ -222,15 +222,14 @@ function loadHobbyEditItem() {
     editItem = JSON.parse(localStorage.getItem("editItem"));
     console.log(editItem);
     document.getElementById("_id").innerHTML = editItem["_id"];
-    document.getElementById("id").innerHTML = editItem["_id"];
     document.getElementById("fname").value = editItem["fname"];
     document.getElementById("question1").value = editItem["question1"];   
     document.getElementById("question2").value = editItem["question2"];   
     document.getElementById("question3").value = editItem["question3"];
-    document.getElementById("genre").value = editItem["question4"];
-    document.getElementById("type").value = editItem["question5"];
-    document.getElementById("dancer").value = editItem["question6"];
-    document.getElementById("professionaldancer").value = editItem["question7"];
+    document.getElementById("genre").value = editItem["genre"];
+    document.getElementById("type").value = editItem["type"];
+    document.getElementById("dancer").value = editItem["dancer"];
+    document.getElementById("professionaldancer").value = editItem["professionaldancer"];
 
 }
 function editData(id) {
@@ -515,7 +514,7 @@ function showTheBookData(e){
 }
 function updateBook(){
   var tmp = {
-   "id" : document.getElementById("_id").innerHTML,
+   "_id" : document.getElementById("_id").innerHTML,
    "fullname" : document.getElementById("fullname").value,
    "title": document.getElementById("title").value,
    "author": document.getElementById("author").value,
