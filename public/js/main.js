@@ -120,10 +120,10 @@ function updateHobby(){
    "question1" : document.getElementById("question1").value,
    "question2" : document.getElementById("question2").value,
    "question3" : document.getElementById("question3").value,
-   "genre" : document.getElementById("genre").value,
-   "type" : document.getElementById("type").value,
-   "dancer" : document.getElementById("dancer").value,
-   "professionaldancer" : document.getElementById("professionaldancer").value, 
+   "question4" : document.getElementById("genre").value,
+   "question5" : document.getElementById("type").value,
+   "question6" : document.getElementById("dancer").value,
+   "question7" : document.getElementById("professionaldancer").value, 
    }
  $.ajax({
         type: 'POST',
