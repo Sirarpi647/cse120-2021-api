@@ -222,15 +222,15 @@ function loadHobbyEditItem() {
     localStorage = window.localStorage;
     editItem = JSON.parse(localStorage.getItem("HobbyEditItem"));
     console.log(editItem);
-    document.getElementById("_id").innerHTML = hobbyeditItem["_id"];
-    document.getElementById("fname").value = hobbyeditItem["fname"];
-    document.getElementById("question1").value = hobbyeditItem["question1"];   
-    document.getElementById("question2").value = hobbyeditItem["question2"];   
-    document.getElementById("question3").value = hobbyeditItem["question3"];
-    document.getElementById("genre").value = hobbyeditItem["genre"];
-    document.getElementById("type").value = hobbyeditItem["type"];
-    document.getElementById("dancer").value = hobbyeditItem["dancer"];
-    document.getElementById("professionaldancer").value = hobbyeditItem["professionaldancer"];
+    document.getElementById("_id").innerHTML = editItem["_id"];
+    document.getElementById("fname").value = editItem["fname"];
+    document.getElementById("question1").value = editItem["question1"];   
+    document.getElementById("question2").value = editItem["question2"];   
+    document.getElementById("question3").value = editItem["question3"];
+    document.getElementById("genre").value = editItem["genre"];
+    document.getElementById("type").value = editItem["type"];
+    document.getElementById("dancer").value = editItem["dancer"];
+    document.getElementById("professionaldancer").value = editItem["professionaldancer"];
 
 }
 function editData(id) {
