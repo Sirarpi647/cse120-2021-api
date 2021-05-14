@@ -220,7 +220,7 @@ function loadEditItem() {
 }    
 function loadHobbyEditItem() {
     localStorage = window.localStorage;
-    editItem = JSON.parse(localStorage.getItem("HobbyEditItem"));
+    editItem = JSON.parse(localStorage.getItem("editItem"));
     console.log(editItem);
     document.getElementById("_id").innerHTML = editItem["_id"];
     document.getElementById("fname").value = editItem["fname"];
