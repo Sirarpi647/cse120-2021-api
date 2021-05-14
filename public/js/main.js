@@ -506,7 +506,8 @@ function showTheBookData(e){
     }
   });
 }
-function updateBook(){
+function updateBook(e){
+  e.preventDefault();
   var mybook = {
    "_id" : document.getElementById("_id").innerHTML,
    "fullname" : document.getElementById("fullname").value,
@@ -541,7 +542,6 @@ function updateBook(){
         },
         complete: function () {
           console.log("Complete"); 
-          window.location.href = "https://cse120-2021-api-sirarpi.herokuapp.com/admin.html" 
         }
     });
 }
