@@ -475,10 +475,10 @@ function handlepublisherchange(){
   mybook.publisher=document.getElementById("publisher").value;
 }
 function handlegpubdatechange(){
-  mybook.publishingdate=document.getElementById("publishingdate").value;
+  mybook.publishingdate=document.getElementById("pdate").value;
 }
 function handleorggpubdatechange(){
-  mybook.orgpublishdate=document.getElementById("orgpublishingdate").value;
+  mybook.orgpublishdate=document.getElementById("origpdate").value;
 }
 function handlegenrechange(){
   mybook.genre=document.getElementById("genre").value;
