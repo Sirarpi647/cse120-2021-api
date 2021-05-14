@@ -31,7 +31,7 @@ function handlequestion3Change(e){
     document.getElementById("othertype").style.display="block";
   }
 }
-function handleQuestion3Change() {
+function handlequestion3Change() {
   if (myhobby.question3 == "other") {
     myhobby.othervalue = document.getElementById("othertype").value;
     document.getElementById("othertype").style.display="block";
@@ -47,7 +47,7 @@ function handlequestion4Change(e){
     document.getElementById("typeother").style.display="block";
   }
 }
-function handleQuestion4Change() {
+function handlequestion4Change() {
   if (myhobby.question4 == "other") {
     myhobby.valueother = document.getElementById("typeother").value;
     document.getElementById("typeother").style.display="block";
@@ -63,7 +63,7 @@ function handlequestion5Change(e){
     document.getElementById("otheranswer").style.display="block";
   }
 }
-function handleQuestion5Change() {
+function handlequestion5Change() {
   if (myhobby.question5 == "other") {
     myhobby.otheransw = document.getElementById("otheranswer").value;
     document.getElementById("otheranswer").style.display="block";
