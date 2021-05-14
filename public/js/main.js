@@ -114,7 +114,7 @@ function showTheHobbyData(e){
 }
 
 function updateHobby(){
-  var tmp = {
+  var myhobby = {
    "_id" : document.getElementById("_id").innerHTML,
    "fname" : document.getElementById("fname").value,
    "question1" : document.getElementById("question1").value,
@@ -371,14 +371,7 @@ function displayData(data, containerDivName) {
     document.getElementById(containerDivName).appendChild(item);
   })
 }
-function toggleOtherData() {
-  var otherData = document.getElementById("otherDataContainer");
-  if (otherData.style.display == "block") {
-    otherData.style.display = "none";
-  } else {
-    otherData.style.display = "block";
-  }
-}
+
   var mybook={
   "owner": "Sirarpi Grigoryan",
   "project": "My Book",
@@ -514,7 +507,7 @@ function showTheBookData(e){
   });
 }
 function updateBook(){
-  var tmp = {
+  var mybook = {
    "_id" : document.getElementById("_id").innerHTML,
    "fullname" : document.getElementById("fullname").value,
    "title": document.getElementById("title").value,
