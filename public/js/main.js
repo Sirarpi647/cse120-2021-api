@@ -506,7 +506,7 @@ function showTheBookData(e){
     }
   });
 }
-function updateBook(){
+function saveBookchanges(){
   var mybook = {
    "_id" : document.getElementById("_id").innerHTML,
    "fullname" : document.getElementById("fullname").value,
