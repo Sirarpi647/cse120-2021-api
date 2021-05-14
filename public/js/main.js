@@ -530,7 +530,7 @@ function updateBook(){
  $.ajax({
         type: 'POST',
         url: "https://cse120-2021-api-sirarpi.herokuapp.com/data/update",
-        data: tmp,
+        data: mybook,
         cache: false,
         dataType : 'json',
         success: function (data) {
@@ -542,7 +542,7 @@ function updateBook(){
         complete: function () {
           console.log("Complete");  
         }
-      });
+    });
 }
 function saveBookData() {
   var mybook = {
