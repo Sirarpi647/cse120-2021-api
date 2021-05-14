@@ -381,7 +381,7 @@ function displayData(data, containerDivName) {
   "colour":"",
   "covertype":"",
   "othercovervalue":"",
-  "number of pages":"",
+  "numberofpages":"",
   "price":"",
   "currency":"",
   "language":"",
@@ -506,7 +506,7 @@ function showTheBookData(e){
     }
   });
 }
-function saveBookchanges(){
+function updateBook(){
   var mybook = {
    "_id" : document.getElementById("_id").innerHTML,
    "fullname" : document.getElementById("fullname").value,
